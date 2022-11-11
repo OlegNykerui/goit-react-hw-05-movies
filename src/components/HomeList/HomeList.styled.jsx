@@ -20,6 +20,7 @@ export const Item = styled.li`
   padding-bottom: 10px;
   text-decoration: none;
   border: 2px solid #f99e8e;
+  border-radius: 2%;
 `;
 
 export const Title = styled.h2`
