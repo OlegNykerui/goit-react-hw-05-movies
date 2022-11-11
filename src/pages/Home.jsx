@@ -10,7 +10,7 @@ const Home = () => {
   }, []);
 
   return (
-    <main>
+    <main style={{ backgroundColor: '#a8a8a8;' }}>
       <h1>Trending today</h1>
       <HomeList films={films} />
     </main>

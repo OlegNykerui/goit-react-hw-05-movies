@@ -6,7 +6,7 @@ export const List = styled.ul`
   grid-template-rows: auto;
   justify-content: center;
   flex-wrap: wrap;
-  border: 2px solid gray;
+  border: 2px solid #f99e8e;
   gap: 30px;
 `;
 
@@ -19,7 +19,7 @@ export const Item = styled.li`
   margin: 20px;
   padding-bottom: 10px;
   text-decoration: none;
-  border: 2px solid gray;
+  border: 2px solid #f99e8e;
 `;
 
 export const Title = styled.h2`
