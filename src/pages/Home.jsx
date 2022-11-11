@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { getTrending } from 'components/API/API';
-import { HomeList } from 'components/HomeList1/HomeList';
+import { HomeList } from 'components/HomeList/HomeList';
 
 const Home = () => {
   const [films, setFilms] = useState([]);
