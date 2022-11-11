@@ -1,28 +1,33 @@
 import { useLocation, Link } from 'react-router-dom';
+import { Image, List, Item, Title, Text } from './HomeList.styled';
 
 export const HomeList = ({ films }) => {
   const location = useLocation();
 
   return (
-    <ul>
+    <List>
       {films.map(film => (
-        <li key={film.id}>
-          <Link to={`/movies/${film.id}`} state={{ from: location }}>
+        <Item key={film.id}>
+          <Link
+            to={`/movies/${film.id}`}
+            state={{ from: location }}
+            style={{ textDecoration: 'none' }}
+          >
             {film.poster_path ? (
-              <img
+              <Image
                 src={`https://image.tmdb.org/t/p/w500${film.poster_path}`}
                 alt={film.title}
-              ></img>
+              ></Image>
             ) : (
-              <img src="https://i.gifer.com/C7Gr.gif" alt="error"></img>
+              <Image src="https://i.gifer.com/C7Gr.gif" alt="error"></Image>
             )}
-            <h2>{film.title}</h2>
-            <p>{film.vote_average}</p>
-            <p>{film.popularity}</p>
-            <p> Relase year: {film.release_date}</p>
+            <Title>{film.title}</Title>
+            <Text>{film.vote_average}</Text>
+            <Text>{film.popularity}</Text>
+            <Text> Relase year: {film.release_date}</Text>
           </Link>
-        </li>
+        </Item>
       ))}
-    </ul>
+    </List>
   );
 };
