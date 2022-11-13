@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { getTrending } from 'components/API/API';
 import { HomeList } from 'components/HomeList/HomeList';
+import css from './Home.module.css';
 
 const Home = () => {
   const [films, setFilms] = useState([]);
@@ -10,8 +11,8 @@ const Home = () => {
   }, []);
 
   return (
-    <main style={{ backgroundColor: '#a8a8a8;' }}>
-      <h1>Trending today</h1>
+    <main>
+      <h1 className={css.title}>Trending today</h1>
       <HomeList films={films} />
     </main>
   );

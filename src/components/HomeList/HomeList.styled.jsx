@@ -12,12 +12,12 @@ export const List = styled.ul`
 
 export const Image = styled.img`
   width: 270px;
-  height: 300px;
+  height: 350px;
 `;
 export const Item = styled.li`
   width: 270px;
-  margin: 20px;
-  padding-bottom: 10px;
+  margin: 10px;
+
   text-decoration: none;
   border: 2px solid #f99e8e;
   border-radius: 2%;
@@ -32,7 +32,11 @@ export const Title = styled.h2`
 
 export const Text = styled.p`
   margin: 3px;
-  text-align: center;
+  font-style: italic;
+
+  /* text-align: center; */
+  padding-left: 10px;
+  margin-bottom: 10px;
 
   color: black;
 `;

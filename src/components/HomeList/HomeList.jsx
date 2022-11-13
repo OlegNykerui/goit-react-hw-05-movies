@@ -22,8 +22,8 @@ export const HomeList = ({ films }) => {
               <Image src="https://i.gifer.com/C7Gr.gif" alt="error"></Image>
             )}
             <Title>{film.title}</Title>
-            <Text>{film.vote_average}</Text>
-            <Text>{film.popularity}</Text>
+            <Text> Rating: {film.vote_average}</Text>
+            <Text>Popular: {film.popularity}%</Text>
             <Text> Relase year: {film.release_date}</Text>
           </Link>
         </Item>
