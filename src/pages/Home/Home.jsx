@@ -11,10 +11,10 @@ const Home = () => {
   }, []);
 
   return (
-    <main>
+    <>
       <h1 className={css.title}>Trending today</h1>
       <HomeList films={films} />
-    </main>
+    </>
   );
 };
 

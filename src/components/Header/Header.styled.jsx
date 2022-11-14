@@ -1,6 +1,11 @@
 import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
 
+export const Wrapper = styled.div`
+  border-bottom: 2px solid #ff2700;
+  background-color: #ffd6cd; ;
+`;
+
 export const ItemMenu = styled(NavLink)`
   display: inline-block;
   border: 1px solid black;

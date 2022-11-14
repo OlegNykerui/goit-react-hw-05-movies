@@ -6,7 +6,7 @@ export const List = styled.ul`
   grid-template-rows: auto;
   justify-content: center;
   flex-wrap: wrap;
-  border: 2px solid #f99e8e;
+  /* border: 2px solid #f99e8e; */
   gap: 30px;
 `;
 

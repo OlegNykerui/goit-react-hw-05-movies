@@ -1,0 +1,28 @@
+.form {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.input {
+  width: 600px;
+  height: 30px;
+  border: 2px solid tomato;
+  border-radius: 12px;
+  font-size: 20px;
+  padding: 10px;
+}
+
+.input:hover,
+.input:focus {
+  border-color: green;
+}
+
+.button {
+  width: 50px;
+  border: 2px solid tomato;
+  margin-left: 20px;
+  border-radius: 7px;
+  background-color: antiquewhite;
+  height: 50px;
+}

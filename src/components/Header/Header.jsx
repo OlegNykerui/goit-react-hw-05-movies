@@ -1,5 +1,5 @@
 import React from 'react';
-import { ItemMenu } from './Header.styled';
+import { ItemMenu, Wrapper } from './Header.styled';
 
 const navMenu = [
   { href: '/', text: 'Home' },
@@ -8,13 +8,13 @@ const navMenu = [
 
 const Header = () => {
   return (
-    <div>
+    <Wrapper>
       {navMenu.map(({ href, text }) => (
         <ItemMenu to={href} key={href} end>
           {text}
         </ItemMenu>
       ))}
-    </div>
+    </Wrapper>
   );
 };
 

@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { getSearchMovies } from 'components/API/API';
 import { HomeList } from 'components/HomeList/HomeList';
+import css from './Movies.module.css';
 
 const Movies = () => {
   const [films, setFilms] = useState([]);
@@ -19,6 +20,11 @@ const Movies = () => {
       alert('Please enter movie');
       return;
     }
+
+    if (e.target.value !== query) {
+      alert(`No films with name ${query}`);
+    }
+
     setQueryParams({ query });
     getSearchMovies(query).then(res => setFilms(res.results));
     setQuery('');
@@ -32,8 +38,9 @@ const Movies = () => {
 
   return (
     <>
-      <form onSubmit={handleSubmit}>
+      <form className={css.form} onSubmit={handleSubmit}>
         <input
+          className={css.input}
           type="text"
           onChange={handleChange}
           name="searchQuery"
@@ -42,9 +49,8 @@ const Movies = () => {
           placeholder="Search movie..."
           value={query}
         />
-        <button>Find</button>
+        <button className={css.button}>Find</button>
       </form>
-
       {films.length > 0 ? <HomeList films={films} /> : null}
     </>
   );
