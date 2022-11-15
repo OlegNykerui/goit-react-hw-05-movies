@@ -22,7 +22,6 @@
 .wrapper {
   background: #fff5f1ba;
   display: flex;
-  align-items: flex-start;
 }
 
 .text_box {
@@ -31,13 +30,18 @@
 
 .list {
   list-style: none;
+  display: flex;
+  justify-content: center;
 }
 
 .item {
   margin-bottom: 10px;
 }
 .reviews {
-  width: 100px;
+  width: 150px;
+  height: 30px;
   border: 1px solid #ffaa9b;
   border-radius: 7px;
+  cursor: pointer;
+  margin-right: 10px;
 }

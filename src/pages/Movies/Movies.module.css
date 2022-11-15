@@ -11,11 +11,8 @@
   border-radius: 12px;
   font-size: 20px;
   padding: 10px;
-}
-
-.input:hover,
-.input:focus {
-  border-color: green;
+  outline: none;
+  background-color: antiquewhite;
 }
 
 .button {

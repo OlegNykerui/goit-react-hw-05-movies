@@ -10,7 +10,6 @@ const options = {
 export const getTrending = async () => {
   try {
     const response = await axios.get(`${baseURL}trending/movie/day`, options);
-    console.log(response.data);
     return response.data;
   } catch (error) {
     console.log(`${error.name} : ${error.message}`);
@@ -25,6 +24,9 @@ export const getSearchMovies = async query => {
         api_key: options.params.api_key,
       },
     });
+    if (response.data.results.length === 0) {
+      alert(`Немає фільма з назвою ${query}!`);
+    }
     return response.data;
   } catch (error) {
     console.log(`${error.name} : ${error.message}`);
@@ -42,7 +44,7 @@ export const getMovieDetails = async id => {
 
 export const getMovieCredits = async id => {
   try {
-    const response = await axios.get(`${baseURL}movie/${id}credits`, options);
+    const response = await axios.get(`${baseURL}movie/${id}/credits`, options);
     return response.data;
   } catch (error) {
     console.log(`${error.name} : ${error.message}`);
@@ -52,6 +54,7 @@ export const getMovieCredits = async id => {
 export const getMovieReviews = async id => {
   try {
     const response = await axios.get(`${baseURL}movie/${id}/reviews `, options);
+    console.log(response.data);
     return response.data;
   } catch (error) {
     console.log(`${error.name} : ${error.message}`);

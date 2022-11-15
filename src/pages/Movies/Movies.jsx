@@ -21,10 +21,6 @@ const Movies = () => {
       return;
     }
 
-    if (e.target.value !== query) {
-      alert(`No films with name ${query}`);
-    }
-
     setQueryParams({ query });
     getSearchMovies(query).then(res => setFilms(res.results));
     setQuery('');
