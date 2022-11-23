@@ -7,7 +7,7 @@
   height: 45px;
   font-size: 20px;
   background-color: #d6d6d6;
-  border: 1px solid #ffaa9b;
+  border: 3px solid #ffaa9b;
   border-radius: 7px;
 }
 
@@ -38,10 +38,11 @@
   margin-bottom: 10px;
 }
 .reviews {
-  width: 150px;
-  height: 30px;
-  border: 1px solid #ffaa9b;
+  width: 200px;
+  height: 53px;
+  border: 2px solid #ffaa9b;
   border-radius: 7px;
   cursor: pointer;
   margin-right: 10px;
+  font-size: 20px;
 }

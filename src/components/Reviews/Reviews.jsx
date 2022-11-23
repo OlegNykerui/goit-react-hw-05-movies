@@ -1,35 +1,36 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { getMovieReviews } from 'components/API/API';
+import css from './Reviews.module.css';
 
 const Reviews = () => {
   const { movieId } = useParams();
   const [reviews, setReviews] = useState([]);
 
   useEffect(() => {
-    getMovieReviews(movieId)
-      .then(data => {
-        setReviews(data.results);
-      })
-      .catch(error => console.log(error));
-  }, [movieId, reviews]);
+    getMovieReviews(movieId).then(data => {
+      setReviews(data.results);
+    });
+  }, [movieId]);
 
   if (reviews.length === 0) {
-    return <p>Sorry, no reviews yet</p>;
+    return <p className={css.alert}>Sorry, no reviews yet </p>;
   }
 
   return (
-    <ul>
+    <ul className={css.list}>
       {reviews.map(item => {
         return (
-          <li key={item.id}>
+          <li className={css.item} key={item.id}>
             <h3>
-              Author:{' '}
+              <p>Author:</p>
               {item.author_details.name
                 ? item.author_details.name
-                : 'Not found'}
+                : 'Anonymous'}
             </h3>
-            <p></p>
+            <p>{item.username}</p>
+            <p className={css.content}>{item.content}</p>
+            <b>rating from author: {item.author_details.rating}</b>
           </li>
         );
       })}

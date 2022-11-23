@@ -1,0 +1,21 @@
+.list {
+  list-style: none;
+  background-color: #fff5f1ba;
+}
+
+.item {
+  padding: 10px;
+  margin-bottom: 5px;
+  border: 2px dashed #ffaa9b;
+}
+
+.content {
+  font-size: 14px;
+  font-style: italic;
+}
+
+.alert {
+  text-align: center;
+  font-size: 18px;
+  font-weight: 600;
+}

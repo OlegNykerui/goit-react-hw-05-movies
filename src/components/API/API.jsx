@@ -53,7 +53,7 @@ export const getMovieCredits = async id => {
 
 export const getMovieReviews = async id => {
   try {
-    const response = await axios.get(`${baseURL}movie/${id}/reviews `, options);
+    const response = await axios.get(`${baseURL}movie/${id}/reviews`, options);
     console.log(response.data);
     return response.data;
   } catch (error) {
