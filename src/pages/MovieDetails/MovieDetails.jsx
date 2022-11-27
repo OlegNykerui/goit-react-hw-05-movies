@@ -1,14 +1,15 @@
-import { useLocation, useParams, Outlet, Link } from 'react-router-dom';
 import { useState, useEffect } from 'react';
-import { getMovieDetails } from 'components/API/API';
-import css from './MovieDetails.module.css';
-
+import { useLocation, useParams, Outlet, Link } from 'react-router-dom';
 import nextId from 'react-id-generator';
+import { getMovieDetails } from 'components/API/API';
+
+import css from './MovieDetails.module.css';
 
 const MovieDetails = () => {
   const location = useLocation();
   const { movieId } = useParams();
   const [movie, setMovie] = useState(null);
+
   const prevLocation = location.state?.from ?? '/';
 
   useEffect(() => {
@@ -51,10 +52,15 @@ const MovieDetails = () => {
         </div>
       </div>
       <ul className={css.list}>
-        <Link key="cast" to="cast" className={css.item}>
+        <Link
+          key="cast"
+          to="cast"
+          state={{ from: prevLocation }}
+          className={css.item}
+        >
           <button className={css.reviews}>Cast</button>
         </Link>
-        <Link key="reviews" to="reviews">
+        <Link key="reviews" to="reviews" state={{ from: prevLocation }}>
           <button className={css.reviews}>Reviews</button>
         </Link>
       </ul>

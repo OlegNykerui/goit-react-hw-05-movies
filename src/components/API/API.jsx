@@ -1,15 +1,15 @@
 import axios from 'axios';
 
-export const baseURL = 'https://api.themoviedb.org/3/';
-const options = {
+const instance = axios.create({
+  baseURL: 'https://api.themoviedb.org/3/',
   params: {
     api_key: 'ed7e21d2b78dbd5c81e3f302822c687c',
   },
-};
+});
 
 export const getTrending = async () => {
   try {
-    const response = await axios.get(`${baseURL}trending/movie/day`, options);
+    const response = await instance.get(`trending/movie/day`);
     return response.data;
   } catch (error) {
     console.log(`${error.name} : ${error.message}`);
@@ -18,10 +18,9 @@ export const getTrending = async () => {
 
 export const getSearchMovies = async query => {
   try {
-    const response = await axios.get(`${baseURL}search/movie`, {
+    const response = await instance.get(`search/movie`, {
       params: {
         query: query,
-        api_key: options.params.api_key,
       },
     });
     if (response.data.results.length === 0) {
@@ -35,7 +34,7 @@ export const getSearchMovies = async query => {
 
 export const getMovieDetails = async id => {
   try {
-    const response = await axios.get(`${baseURL}movie/${id}`, options);
+    const response = await instance.get(`movie/${id}`);
     return response.data;
   } catch (error) {
     console.log(`${error.name} : ${error.message}`);
@@ -44,7 +43,7 @@ export const getMovieDetails = async id => {
 
 export const getMovieCredits = async id => {
   try {
-    const response = await axios.get(`${baseURL}movie/${id}/credits`, options);
+    const response = await instance.get(`movie/${id}/credits`);
     return response.data;
   } catch (error) {
     console.log(`${error.name} : ${error.message}`);
@@ -53,7 +52,7 @@ export const getMovieCredits = async id => {
 
 export const getMovieReviews = async id => {
   try {
-    const response = await axios.get(`${baseURL}movie/${id}/reviews`, options);
+    const response = await axios.get(`movie/${id}/reviews`);
     console.log(response.data);
     return response.data;
   } catch (error) {
